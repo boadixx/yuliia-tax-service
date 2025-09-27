@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yuliia Utkina — Tax Preparation Service</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body id="top">
+  <!-- ============== HEADER (без перехода) ============== -->
+  <header class="header-bar">
+    <div class="header-left">
+      <img src="img/log1.png" alt="Логотип" class="logo"/>
+      <div class="brand">
+        <div class="brand-name">Yuliia Utkina</div>
+        <div class="brand-subtitle">Tax Preparation Service</div>
+      </div>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Open menu">&#9776;</button>
+
+    <nav class="header-nav" id="nav" aria-label="Main navigation">
+      <a href="#about">About me</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contacts</a>
+    </nav>
+
+    <div class="header-right">
+      <span class="country">USA</span>
+      <a href="tel:+19513759040" class="icon" aria-label="Call"><i class="fas fa-phone"></i></a>
+      <a href="#" class="icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="icon" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+      <a href="mailto:utkinayuliia@gmail.com" class="icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </header>
+
+  <!-- ============== HERO (без перехода) ============== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <h1>Need help with taxes?</h1>
+      <a href="#contact" class="cta-btn">Get started</a>
+    </div>
+  </section>
+
+  <!-- ============== QUICK FACTS (с переходом сверху) ============== -->
+  <section class="quick-facts slope-top" id="about">
+    <div class="container">
+      <div class="intro">
+        <img src="img/log1.png" alt="Yuliia" class="profile-photo"/>
+        <div>
+          <h2>Hi! My name is Yuliia Utkina!</h2>
+          <p class="subtitle">Quick facts about me:</p>
+        </div>
+      </div>
+
+      <div class="facts">
+        <div class="fact">
+          <strong>5+</strong>
+          <p>years of<br>experience</p>
+        </div>
+        <div class="fact">
+          <strong>300+</strong>
+          <p>regular<br>customers</p>
+        </div>
+        <div class="credentials">
+          <p><strong>Credentials:</strong></p>
+          <ul>
+            <li>AFSP</li>
+            <li>CTEC</li>
+            <li>CAA</li>
+            <li>NYTPRIN</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SERVICES (с переходом сверху) ============== -->
+  <section class="services-block slope-top" id="services">
+    <h3>How can I help you?</h3>
+    <p class="subtitle">I provide a wide range of services related to accounting, taxes, and starting a new business:</p>
+
+    <div class="services-grid">
+      <div class="service">
+        <img src="img/icons/1.png" alt="Registration">
+        <p>Registration and closure of companies</p>
+      </div>
+      <div class="service">
+        <img src="img/icons/2.png" alt="Business Tax Return">
+        <p>Filling out individual and business tax return</p>
+      </div>
+      <div class="service">
+        <img src="img/icons/3.png" alt="Sales Tax">
+        <p>Sales tax report</p>
+      </div>
+
+      <div class="service">
+        <img src="img/icons/4.png" alt="Tax Consulting">
+        <p>Tax consulting and planning</p>
+      </div>
+      <div class="service">
+        <img src="img/icons/5.png" alt="Pension Plan">
+        <p>Choosing a pension plan</p>
+      </div>
+      <div class="service">
+        <img src="img/icons/6.png" alt="Accounting">
+        <p>Professional accounting</p>
+      </div>
+
+      <div class="service">
+        <img src="img/icons/7.png" alt="Profit and Loss">
+        <p>Profit and loss statement</p>
+      </div>
+      <div class="service">
+        <img src="img/icons/8.png" alt="Balance Sheet">
+        <p>Balance sheet</p>
+      </div>
+      <div class="service">
+        <img src="img/icons/9.png" alt="Payroll">
+        <p>Payroll service / Business license</p>
+      </div>
+
+      <div class="service">
+        <img src="img/icons/11.png" alt="Seller Permit">
+        <p>Sellers permit</p>
+      </div>
+      <div class="service">
+        <img src="img/icons/10.png" alt="All States">
+        <p>All states</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER (форма в центре, контакты внизу) ============== -->
+  <footer class="site-footer slope-top" id="contact">
+    <div class="footer-form-block">
+      <h3>Contact us</h3>
+
+      <form class="footer-form" id="footerForm" novalidate>
+        <label class="visually-hidden" for="f-name">Name</label>
+        <input id="f-name" type="text" name="name" placeholder="Name" required autocomplete="name">
+
+        <label class="visually-hidden" for="f-email">Email</label>
+        <input id="f-email" type="email" name="email" placeholder="Email" required autocomplete="email">
+
+        <label class="visually-hidden" for="f-service">Choose service</label>
+        <select id="f-service" name="service" required>
+          <option value="" disabled selected>Choose service</option>
+          <option>Registration / Closure</option>
+          <option>Individual &amp; Business Tax Return</option>
+          <option>Sales tax report</option>
+          <option>Accounting</option>
+        </select>
+
+        <label class="visually-hidden" for="f-msg">Message</label>
+        <textarea id="f-msg" name="message" rows="3" placeholder="Briefly about the task" autocomplete="off"></textarea>
+
+        <label class="agree">
+          <input type="checkbox" required>
+          <span>I agree to the processing of personal data</span>
+        </label>
+
+        <button type="submit" class="footer-btn" id="footerSubmit">Send</button>
+
+        <div class="form-toast" id="footerToast" role="status" aria-live="polite">
+          The application has been sent ✅
+        </div>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="meta">
+        <div><i class="fa-solid fa-location-dot"></i> Los Angeles, CA</div>
+        <div><i class="fa-solid fa-envelope"></i> contact@yuliiautkina.com</div>
+        <div><i class="fa-solid fa-phone"></i> +1 (951) 375-9040</div>
+        <div>
+          <a href="#" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-telegram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <span>© 2025 Yuliia Utkina. All rights reserved.</span><br>
+        <span>USA • Mon–Fri 9:00–18:00</span>
+      </div>
+
+      <a class="back-to-top" href="#top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ============== SCRIPTS ============== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.getElementById('burger');
+      const nav = document.getElementById('nav');
+      if (burger && nav) {
+        burger.addEventListener('click', () => nav.classList.toggle('active'));
+      }
+
+      const form  = document.getElementById('footerForm');
+      const toast = document.getElementById('footerToast');
+      if (form && toast) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 3000);
+          form.reset();
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const id = link.getAttribute('href');
+          if (!id || id === '#') return;
+          const target = document.querySelector(id);
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (nav && nav.classList.contains('active')) nav.classList.remove('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
