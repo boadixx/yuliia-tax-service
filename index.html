@@ -139,6 +139,7 @@
       <h3>Contact us</h3>
 
       <form class="footer-form" id="footerForm" name="contact-form" method="POST" data-netlify="true" novalidate>
+        <input type="hidden" name="form-name" value="contact-form">
         <label class="visually-hidden" for="f-name">Name</label>
         <input id="f-name" type="text" name="name" placeholder="Name" required autocomplete="name">
 
@@ -205,7 +206,7 @@
         burger.addEventListener('click', () => nav.classList.toggle('active'));
       }
 
-     javascriptconst form  = document.getElementById('footerForm');
+     const form  = document.getElementById('footerForm');
 const toast = document.getElementById('footerToast');
 
 if (form && toast) {
@@ -213,16 +214,22 @@ if (form && toast) {
     e.preventDefault();
 
     const formData = new FormData(form);
+    // 
+    formData.append("form-name", "contact-form");
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-    .then(() => {
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 3000);
-      form.reset();
+    .then((response) => {
+      if (response.ok) {
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+        form.reset();
+      } else {
+        throw new Error("Server response was not ok");
+      }
     })
     .catch((error) => {
       console.error("Form submission error:", error);
