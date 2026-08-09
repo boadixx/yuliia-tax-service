@@ -138,7 +138,7 @@
     <div class="footer-form-block">
       <h3>Contact us</h3>
 
-      <form class="footer-form" id="footerForm" novalidate>
+      <form class="footer-form" id="footerForm" name="contact-form" method="POST" data-netlify="true" novalidate>
         <label class="visually-hidden" for="f-name">Name</label>
         <input id="f-name" type="text" name="name" placeholder="Name" required autocomplete="name">
 
@@ -205,16 +205,31 @@
         burger.addEventListener('click', () => nav.classList.toggle('active'));
       }
 
-      const form  = document.getElementById('footerForm');
-      const toast = document.getElementById('footerToast');
-      if (form && toast) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          toast.classList.add('show');
-          setTimeout(() => toast.classList.remove('show'), 3000);
-          form.reset();
-        });
-      }
+     javascriptconst form  = document.getElementById('footerForm');
+const toast = document.getElementById('footerToast');
+
+if (form && toast) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+    .then(() => {
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+      form.reset();
+    })
+    .catch((error) => {
+      console.error("Form submission error:", error);
+      alert("Something went wrong. Please try again.");
+    });
+  });
+}
 
       document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
