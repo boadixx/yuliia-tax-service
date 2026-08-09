@@ -9,7 +9,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* Палитра */
+/* Palette */
 :root{
   --brand-blue: #00488C;
   --header-blue:#00468B;
@@ -18,7 +18,7 @@ html, body {
   --footer-bg:#f3f4f6;
 }
 
-/* Универсальный клин сверху */
+/* Universal wedge on top */
 .slope-top{ position: relative; }
 .slope-top::before{
   content:"";
@@ -67,7 +67,7 @@ html, body {
   font-size:26px; cursor:pointer; z-index:11;
 }
 
-/* =============== HERO (без клина) =============== */
+/* =============== HERO  =============== */
 .hero-section{
   width:100%; height:500px;
   background:url('img/fon1.png') center/cover no-repeat;
@@ -89,7 +89,7 @@ html, body {
 }
 .cta-btn:hover{ background:var(--brand-blue); color:#fff; }
 
-/* =============== QUICK FACTS (с клином) =============== */
+/* =============== QUICK FACTS  =============== */
 .quick-facts{
   --section-bg:#ffffff;
   background: var(--section-bg);
@@ -116,7 +116,7 @@ html, body {
 .credentials p{ margin:0 0 6px; font-size:20px; font-weight:800; color:var(--brand-blue); }
 .credentials ul{ margin:0; padding:0; list-style:none; color:var(--brand-blue); font-weight:600; line-height:1.6; }
 
-/* =============== SERVICES (с клином) =============== */
+/* =============== SERVICES  =============== */
 .services-block{
   --section-bg: #00488C;
   background: var(--section-bg);
@@ -133,7 +133,7 @@ html, body {
 .service img{ height:50px; margin-bottom:12px; }
 .service p{ margin:0; font-weight:600; }
 
-/* =============== FOOTER (форма по центру) =============== */
+/* =============== FOOTER  =============== */
 .site-footer{
   --section-bg: var(--footer-bg);
   background: var(--section-bg);
@@ -199,26 +199,29 @@ html, body {
 }
 .footer-btn:hover{ filter:brightness(1.05); transform:translateY(-1px); }
 .form-toast{
-  display:inline-block; opacity:0; pointer-events:none;
-  transform:translateY(6px); transition:.25s ease;
-  background:#eef5ff; color: var(--text-dark);
-  padding:8px 10px; border-radius:8px; font-size:14px; margin-top:8px;
-  border:1px solid rgba(0,72,140,.12);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9); /* Идеально центрирует и готовит к плавному увеличению */
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: transform .3s ease, opacity .3s ease, visibility .3s ease;
+  background: #ffffff; /* Белый фон, чтобы контрастировать на фоне затемнения */
+  color: var(--text-dark);
+  padding: 16px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid rgba(0,72,140,.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,.15); /* Красивая мягкая тень */
+  z-index: 9999; /* Чтобы всплывало поверх абсолютно всего на сайте */
+  text-align: center;
 }
-.form-toast.show{ opacity:1; transform:translateY(0); }
-
-/* Нижняя часть футера */
-.footer-bottom{
-  max-width: 1200px;
-  margin: 18px auto 0;
-  padding: 14px 20px 24px;
-  border-top: 1px solid rgba(0,0,0,.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  color: var(--muted);
-  font-size: 13px;
+.form-toast.show{
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1); /* Плавно увеличивается до нормального размера */
 }
 .footer-bottom .meta{
   display:flex; gap:20px; flex-wrap:wrap; justify-content:center;
@@ -244,7 +247,7 @@ html, body {
 }
 .back-to-top:hover{ opacity:.85; }
 
-/* Соцсети в футере */
+/* Social media */
 .footer-bottom .social-icon{
   color: var(--brand-blue);
   font-size: 18px;
@@ -254,7 +257,7 @@ html, body {
 }
 .footer-bottom .social-icon:hover{ color:#ff4081; }
 
-/* Доступность */
+/* Accessibility */
 .visually-hidden{
   position:absolute !important;
   clip:rect(1px,1px,1px,1px);
